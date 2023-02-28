@@ -125,7 +125,7 @@ class ClsGame {
                 if(typeCase == "P"){
                     this.NbP++                    
                     const galaxieHtml = document.createElement('img')
-                    galaxieHtml.src = '../static/img/Galaxy01.png'
+                    galaxieHtml.src = './static/img/Galaxy01.png'
                     caseHTML.append(galaxieHtml)
                 }
                 
@@ -144,7 +144,7 @@ class ClsGame {
                     nbPlanet++
                     if(nbPlanet > 6){nbPlanet = 1}
                     const planetHtml = document.createElement('img')
-                    planetHtml.src = "../static/img/planet"+  nbPlanet + ".png"
+                    planetHtml.src = "./static/img/planet"+  nbPlanet + ".png"
                     this.ElemHTML.append(planetHtml)
                 }
                 if(typeEF.substr(0, 1) == "F"){
