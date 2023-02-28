@@ -141,7 +141,7 @@ class ClsGame {
                     this.ElemHTML.id = "E" + numE
                     nbPlanet++
                     if(nbPlanet > 6){nbPlanet = 1}
-                    this.ElemHTML.style.backgroundImage = "url('../static/img/planet"+  nbPlanet + ".png')"
+                    this.ElemHTML.style.backgroundImage = "url('./img/planet"+  nbPlanet + ".png')"
                 }
                 if(typeEF.substr(0, 1) == "F"){
                     this.ElemHTML.id = "F"
