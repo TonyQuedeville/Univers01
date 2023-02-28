@@ -305,10 +305,10 @@ input[type=number] {
 #galaxy01 {
   position: absolute;
   left: -20%;
-  top: -20%;
+  top: 10%;
   border-radius: 50%;
   box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.4745098039);
-  width: 70%;
+  width: 60%;
   height: 75%;
   opacity: 0.3;
   -webkit-animation: galaxy-rotate 200s linear infinite;

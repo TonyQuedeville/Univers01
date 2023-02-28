@@ -551,7 +551,7 @@ LevelEF = []
 function initLevel(){
     LevelEF = []
 
-    if(level<=27){
+    if(level<=levelMax){
         Levels.levelsEF[level-1].forEach(el => {
             let ef = []
             el.forEach(e => {

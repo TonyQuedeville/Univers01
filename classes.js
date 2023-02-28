@@ -18,6 +18,7 @@ class ClsGame {
     constructor(levelsBP, levelsEF) {
         // Joueur
         //this.playerName = playerName
+        this.life = 3
 
         // Levels
         this.levelsBP = levelsBP // Tableau des différents niveau Grille Brique / Placement
@@ -60,6 +61,7 @@ class ClsGame {
         this.levelEF = this.levelsEFInit[this.level-1] // Niveau actuel Grille Element / Fleche
         this.NbP = 0
         initLevel()
+        document.getElementById('nbLife').textContent = this.life
 
         // Grille
         this.nbCol = this.levelBP[0].length
@@ -331,51 +333,6 @@ class ClsGame {
         }
     }
 
-
-    TestEP(demo = false){
-        let i = 0
-        for(let lig=0; lig<this.nbLig; lig++){
-            for(let col=0; col<this.nbCol; col++){
-                if(LevelEF[lig][col].substr(0, 1) == "E" && this.levelBP[lig][col] == "P"){ // Test si E = P
-                    i++
-                    document.getElementById("case_" + lig + "_" + col).classList = "case PE"
-                }
-            }
-        }
-        
-        if(i == this.NbP) {
-            const resultLevel = document.getElementById("resultLevel")
-            const parafLevelHtml = document.createElement('p')
-            parafLevelHtml.textContent = "level " + this.level + " : " + nbEssai
-            resultLevel.append(parafLevelHtml)
-
-            level++
-            nbEssai = 1
-            if(level > this.nbLevel){
-                document.getElementById('gamespace').textContent = "Jeux terminé Bravo !"
-                setTimeout(()=>{location.reload()}, 2000)
-            }
-
-            if(!demo){
-                document.getElementById('gamespace').textContent = "Bravo !"
-                pause = true
-                setTimeout(()=>{
-                    spaceGame.initPart(level)
-                }, 1500)
-            } else {
-                spaceGame.initPart(level)
-            }
-        }
-    }
-
-    // Get/Set position de fleche
-    static get FLig() {
-        return !this._FLig
-    }
-    static set FLig(lig) {
-        this._FLig = lig
-    }
-
     // déplacement fleche HTML
     depFleche(){
         const caseFLeft = document.getElementById("case_" + this.FLig + "_" + this.FCol).getBoundingClientRect().left - this.grilleLeft
@@ -404,6 +361,54 @@ class ClsGame {
         }
 
         
+    }
+
+    // Test si E = P
+    TestEP(demo = false){
+        let i = 0
+        for(let lig=0; lig<this.nbLig; lig++){
+            for(let col=0; col<this.nbCol; col++){
+                if(LevelEF[lig][col].substr(0, 1) == "E" && this.levelBP[lig][col] == "P"){ // Test si E = P
+                    i++
+                    document.getElementById("case_" + lig + "_" + col).classList = "case PE"
+                }
+            }
+        }
+        
+        if(i == this.NbP) { // Si tous les Elements sont sur les Placements
+            const resultLevel = document.getElementById("resultLevel")
+            const parafLevelHtml = document.createElement('p')
+            parafLevelHtml.textContent = "level " + this.level + " : " + nbEssai
+            resultLevel.append(parafLevelHtml)
+
+            level++
+            nbEssai = 1
+
+            if(!demo){
+                this.life++
+                document.getElementById('nbLife').textContent = this.life
+                document.getElementById('gamespace').textContent = "Bravo !"
+                pause = true
+                setTimeout(()=>{
+                    spaceGame.initPart(level)
+                }, 1500)
+            } else {
+                spaceGame.initPart(level)
+            }
+
+            if(level > this.nbLevel){
+                document.getElementById('gamespace').textContent = "Jeux terminé Bravo !"
+                setTimeout(()=>{location.reload()}, 2000)
+            }
+        }
+    }
+
+    // Get/Set position de fleche
+    static get FLig() {
+        return !this._FLig
+    }
+    static set FLig(lig) {
+        this._FLig = lig
     }
 }
 

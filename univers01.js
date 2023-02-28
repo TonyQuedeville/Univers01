@@ -11,7 +11,7 @@ lien utile : https://learntutorials.net/fr/javascript/topic/1808/requestanimatio
 
 // Espace de jeu
 const spaceGame = new ClsGame(Levels.levelsBP, Levels.levelsEF)
-levelMax = Levels.levelsBP.length
+const levelMax = Levels.levelsBP.length
 //spaceGame.displayTime()
 
 // Fleche
@@ -24,10 +24,12 @@ let nbEssai = 1
 let pause = false
 let demo = false
 
+
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
 // Initialisation de l'espace de jeu en fonction du level
 let level = 1
+let Life = 5
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
@@ -109,6 +111,13 @@ function jouer(){
                 case "r": // reset level
                     spaceGame.initPart(level)
                     nbEssai++
+                    spaceGame.life--
+                    document.getElementById('nbLife').textContent = spaceGame.life
+                    if(spaceGame.life <= 0){
+                        document.getElementById('gamespace').textContent = "Perdu !"
+                        setTimeout(()=>{location.reload()}, 2000)
+                        return
+                    }
                     break;
 
                 case "n": // new part
