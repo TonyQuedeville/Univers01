@@ -400,6 +400,7 @@ input[type=number] {
 }
 .E {
   z-index: 1;
+  background: url("../img/planet01.png");
   background-size: 107%;
   background-position: -1px -1px;
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
