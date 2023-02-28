@@ -53,6 +53,7 @@ class ClsGame {
         en fonction du niveau de difficulté: Level.
     */
     initPart(level){
+        pause = false
         this.level = level
         this.gamespaceHTML.textContent = this.level
         this.levelBP = this.levelsBP[this.level-1] // Niveau actuel Grille Brique / Placement
@@ -330,7 +331,8 @@ class ClsGame {
         }
     }
 
-    TestEP(){
+
+    TestEP(demo = false){
         let i = 0
         for(let lig=0; lig<this.nbLig; lig++){
             for(let col=0; col<this.nbCol; col++){
@@ -349,11 +351,20 @@ class ClsGame {
 
             level++
             nbEssai = 1
-            document.getElementById('selectLevel').value = level
             if(level > this.nbLevel){
-                document.getElementById('selectLevel').value = "Jeux terminé Bravo !"
+                document.getElementById('gamespace').textContent = "Jeux terminé Bravo !"
+                setTimeout(()=>{location.reload()}, 2000)
             }
-            spaceGame.initPart(level) 
+
+            if(!demo){
+                document.getElementById('gamespace').textContent = "Bravo !"
+                pause = true
+                setTimeout(()=>{
+                    spaceGame.initPart(level)
+                }, 1500)
+            } else {
+                spaceGame.initPart(level)
+            }
         }
     }
 

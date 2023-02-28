@@ -20,14 +20,16 @@
         </div>
         <div class="horizontal center">
             <button id="playDemo">Demo</button>
-            <label >Level :</label>
-            <input type="number" id="selectLevel" min="1" max="26" value="1">
+            <!--<label >Level :</label>
+            <input type="number" id="selectLevel" min="1" max="27" value="1">--> 
         </div>
     </nav>  
     <!----> 
 
+    
     <main>
-        <div id="gamespace" class="gamespace">       
+        <img id="galaxy01" src="./static/img/Galaxy01.png" alt="">
+        <div id="gamespace" class="gamespace">   
             <div id="narration">
                 <div class="title vertical">
                     <h1> Univers 01 </h1>
@@ -38,8 +40,7 @@
                     <p>"N" (Nouvelle partie) : pour Relancer une Nouvelle partie</p>
                     <p>"R" (Restart) : pour Refraire un autre essai</p>
                     <p>"S" (Solution) : pour visualiser la solution. Une solution visualisée compte pour 3 essais</p>
-                    <br>
-                    <p>Commencer :</p>
+                    <p>"Enter" Commencer :</p>
                     <img id="start" src="./static/icn/icn-play.png" alt="Commencer à jouer">
                 </div>
             </div>
@@ -57,6 +58,7 @@
             </div>
 
             <div id="resultLevel" class="vertical"></div>
+
         </div>
     </main>
     

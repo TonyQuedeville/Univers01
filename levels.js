@@ -54,6 +54,16 @@ let Levels = {
             ["B","P","","","B","B","B","B"],
             ["B","B","B","B","B","","",""],
         ],
+        [ // 5 bis
+            ["B","B","B","B","B","B","B","B"],
+            ["B","","","","B","","","B"],
+            ["B","","B","","B","","P","B"],
+            ["B","","","","","","P","B"],
+            ["B","","B","","B","","P","B"],
+            ["B","","","","B","","","B"],
+            ["B","B","B","B","B","","","B"],
+            ["","","","","B","B","B","B"],
+        ],
         [ // 6
             ["B","B","B","B","B","B","B","B","B"],
             ["B","","","","P","","","","B"],
@@ -294,6 +304,16 @@ let Levels = {
             ["","","","FH","","","",""],
             ["","","","","","","",""],
         ],
+        [ // 5 Bis
+            ["","","","","","","",""],
+            ["","","","","","","",""],
+            ["","","","","","E1","",""],
+            ["","","","","","E2","",""],
+            ["","","","","","E3","",""],
+            ["","","","","","","",""],
+            ["","","","","","FH","","r"],
+            ["","","","","","","","r"],
+        ],
         [ // 6
             ["","","","","","","","",""],
             ["","","","","E1","","","",""],
@@ -500,6 +520,7 @@ seqSolutions = [
     "DHHDDDBGDDBBGHBBGGHDHGDHHGGBBGBD",
     "HDDHDDGGBBDDGBDGGHHHDBDGGGGHDGBBDHDDDBBGHDHGG",
     "HHGDBBGGHHDDHDBHHDDBBBGGHGGGBBDDHDHGDHHHGGBGBBBHHHDHDDBBBGGDDHHHGGBGBB",
+    "DHHHGBHGGBBGGHHDGBBDDHHDDDHHGBDBGGGBBGGHHDDDDBDHBBBGHHDHGGGDDHHDBBBGHGGBBGGHHDDDDBDHGBBBDHGHHGGGGHHDDBHGGBBDDDD",
     "HGHGGHHDDDDBBDDHGDHGGGGBBGGHDGHDD",
     "BBGHGHGBGBBDHGHDBBBDDHHGGDBGHHHDBGBBDDDHHHGDBBBGGGHHDDHDB",
     "BDBDBBGHBGGHHGHDHDDBBDBBGHGBGHHGHHDBHDDBGGHGBHGGBDHDDDDBBDBGBGGHHBBDDHGBGH",
@@ -521,6 +542,7 @@ seqSolutions = [
     "DHHGBHGGBDBBBDDHBGGHDGHHHDDBGBGBBDHBDDHGHGHHGGBDHDDB",
     "GGHDBDBBGHGGBDHHHDBHGGBDBBGGGHHDDGGBBDDDHHGHHGGBHDDBBDBBGHDHDHHGBBDDDHGGDBBBGGDH",
     "GHGHGHHGGBBGBBDDDDHDDHGHHDDDBBGGBBDHGGHHHDBDGGBBGBDGGGGGHHDDGHHDDDDBBBDDBGHGHHHGGBDHDBGGHGGBBGBBDDDDHHBBGGGGHHDDDGGGBBDDHBDDHGDDDBGHGGBGGGHHDDGHHDBHDDDBGGDDDDHGGDBBHGGGHGGBDDDDHGBGGGBGBBDDDHHBBGGHBDDHGDDDBGHGGBGGHDD",
+
 ]
 
 // Initialisation level
@@ -529,7 +551,7 @@ LevelEF = []
 function initLevel(){
     LevelEF = []
 
-    if(level<=26){
+    if(level<=27){
         Levels.levelsEF[level-1].forEach(el => {
             let ef = []
             el.forEach(e => {
