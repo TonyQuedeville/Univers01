@@ -1,25 +1,25 @@
 @charset "UTF-8";
 /*  Tony Quedeville : tquedevi
- *  Zone01: Projet Make-your-game
- *  14-11-2022
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
  *  */
 /* Utils (variables, mixin, fonction, %placeholder pour extend) */
 /*  Tony Quedeville : tquedevi
- *  Zone01: Projet Make-your-game
- *  14-11-2022
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
  *  */
 /*import "sass/Utils/_fonctions.sass"*/
 /*  Tony Quedeville : tquedevi
- *  Zone01: Projet Make-your-game
- *  14-11-2022
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
  *  */
 /*import "sass/Utils/_placeholders.sass"*/
 /* Thèmes */
 /* Vendors (bootsrtap, jquery, ...) */
 /* Base (police, norme, box-sizing, ...) */
 /*  Tony Quedeville : tquedevi
- *  Zone01: Projet Make-your-game
- *  14-11-2022
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
  *  */
 html, body {
   width: 100%;
@@ -62,8 +62,8 @@ h6 {
 
 /* Layout (header, footer, main, ...) */
 /*  Tony Quedeville : tquedevi
- *  Zone01: Projet Make-your-game
- *  14-11-2022
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
  *  */
 nav {
   width: 99.4%;
@@ -422,6 +422,10 @@ input[type=number] {
   scale: 1;
 }
 
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
+ *  */
 #board {
   width: 23vw;
   height: 86vh;
@@ -484,8 +488,8 @@ input[type=number] {
 /* Pages (specifique à la page) */
 /* Components (button, select, input, ... ) */
 /*  Tony Quedeville : tquedevi
- *  Zone01: Projet Make-your-game
- *  14-11-2022
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
  *  */
 #playSeq {
   width: 45px;
