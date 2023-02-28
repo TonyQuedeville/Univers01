@@ -364,19 +364,25 @@ input[type=number] {
 }
 .P {
   box-shadow: 0px 0px 5px 1px #76e6e6;
-  border-radius: 10px;
+  border-radius: 50%;
   scale: 0.9;
-  background: url("../img/Galaxy01.png");
-  background-size: cover;
+}
+.P img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   -webkit-animation: galaxy-rotate 30s linear infinite;
           animation: galaxy-rotate 30s linear infinite;
 }
 
 .PE {
   box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.4745098039);
-  border-radius: 10px;
-  background: url("../img/Galaxy01.png");
-  background-size: cover;
+  border-radius: 50%;
+}
+.PE img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   -webkit-animation: galaxy-rotate 30s linear infinite;
           animation: galaxy-rotate 30s linear infinite;
 }
@@ -400,16 +406,19 @@ input[type=number] {
 }
 .E {
   z-index: 1;
-  background: url("../img/planet01.png");
-  background-size: 107%;
-  background-position: -1px -1px;
+  overflow: hidden;
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  scale: 0.7;
-  -webkit-animation: planete-rotate 20s linear infinite;
-          animation: planete-rotate 20s linear infinite;
   transition: 250ms;
   transform: translate(0, 0);
+  scale: 0.7;
+}
+.E img {
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  -webkit-animation: planete-rotate 20s linear infinite;
+          animation: planete-rotate 20s linear infinite;
 }
 
 .F {

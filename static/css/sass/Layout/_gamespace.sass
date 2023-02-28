@@ -74,18 +74,22 @@
 
 .P
     box-shadow: $gridEditor 
-    border-radius: $brickRadius
+    border-radius: $rond
     scale: 0.9
-    background: url('../img/Galaxy01.png') // $fondBlue //
-    background-size: cover
-    animation: galaxy-rotate 30s linear infinite
+    img
+        width: 100%
+        height: 100%
+        border-radius: $rond 
+        animation: galaxy-rotate 30s linear infinite
 
 .PE
     box-shadow: $softLight
-    border-radius: $brickRadius
-    background: url('../img/Galaxy01.png') // $fondJaune //
-    background-size: cover
-    animation: galaxy-rotate 30s linear infinite
+    border-radius: $rond
+    img
+        width: 100%
+        height: 100%
+        border-radius: $rond 
+        animation: galaxy-rotate 30s linear infinite
 
 
 @keyframes planete-rotate 
@@ -97,15 +101,19 @@
 
 .E
     z-index: 1
-    background: url('../img/planet01.png')
-    background-size: 107%
-    background-position: -1px -1px
+    //background: $fondBlue
+    overflow: hidden
     box-shadow: $shadow
     border-radius: $rond 
-    scale: 0.7
-    animation: planete-rotate 20s linear infinite
     transition: 250ms
     transform: translate(0,0)
+    scale: 0.7
+
+    img
+        width: 110%
+        height: 110%
+        border-radius: $rond 
+        animation: planete-rotate 20s linear infinite
 
 .F
     z-index: 2

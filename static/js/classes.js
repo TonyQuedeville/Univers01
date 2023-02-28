@@ -123,8 +123,10 @@ class ClsGame {
                 this.grilleHTML.append(caseHTML)
 
                 if(typeCase == "P"){
-                    this.NbP++
-                    
+                    this.NbP++                    
+                    const galaxieHtml = document.createElement('img')
+                    galaxieHtml.src = '../static/img/Galaxy01.png'
+                    caseHTML.append(galaxieHtml)
                 }
                 
                 // Elements et de la Fleche
@@ -141,7 +143,9 @@ class ClsGame {
                     this.ElemHTML.id = "E" + numE
                     nbPlanet++
                     if(nbPlanet > 6){nbPlanet = 1}
-                    this.ElemHTML.style.backgroundImage = "url('./static/img/planet"+  nbPlanet + ".png')"
+                    const planetHtml = document.createElement('img')
+                    planetHtml.src = "../static/img/planet"+  nbPlanet + ".png"
+                    this.ElemHTML.append(planetHtml)
                 }
                 if(typeEF.substr(0, 1) == "F"){
                     this.ElemHTML.id = "F"
