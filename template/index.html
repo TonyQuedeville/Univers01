@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Univers 01</title>
+    <link rel="icon" type="image/png" href="../static/icn/icn-STS.png"/>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <!-- Entête -->
+    <nav>
+        <div class="horizontal center">
+            <button id="newPart">N : Nouvelle partie</button>
+            <button id="restartLevel">R : Restart level</button>
+        </div>
+        <div class="horizontal center">
+            <h3 >Univers 01</h3>
+        </div>
+        <div class="horizontal center">
+            <button id="playDemo">Demo</button>
+            <label >Level :</label>
+            <input type="number" id="selectLevel" min="1" max="26" value="1">
+        </div>
+    </nav>  
+    <!----> 
+
+    <main>
+        <div id="gamespace" class="gamespace">       
+            <div id="narration">
+                <div class="title vertical">
+                    <h1> Univers 01 </h1>
+                    <p>A bord de votre vaisseau, votre mission est de ramenner les planètes perdues dans une des galaxies de l'univers 01.</p>
+                    <p>Trouver les solutions de chaque niveau en moins d'essai possible.</p>
+                    <p>Visualiser la solution vous en coutera 3 essais.</p>
+                    <p>Utilisez les flèches du clavier pour déplacer votre vaisseau. (gauche, droite, haut, bas)</p>
+                    <p>"N" (Nouvelle partie) : pour Relancer une Nouvelle partie</p>
+                    <p>"R" (Restart) : pour Refraire un autre essai</p>
+                    <p>"S" (Solution) : pour visualiser la solution. Une solution visualisée compte pour 3 essais</p>
+                    <br>
+                    <p>Commencer :</p>
+                    <img id="start" src="../static/icn/icn-play.png" alt="Commencer à jouer">
+                </div>
+            </div>
+        </div>
+
+        <div id="board">
+            <div class="horizontal center">
+                <p>Solution</p>
+                <img id="playSeq" src="../static/icn/icn-play.png" alt="play sequence solution">
+            </div>
+            
+            <div class="horizontal center">
+                <p >nombre d'essai :</p>
+                <p id="nbEssaiLevel"></p>
+            </div>
+
+            <div id="resultLevel" class="vertical"></div>
+        </div>
+    </main>
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>Zone 01 - Tony Quedeville :</p>
+        <p>18/02/2023</p>
+        <a href="" class="infobulle anim" target="_blank" aria-label="GitHub: Think-Idea" alt="Lien vers le projet Git Think-Idea">
+            <div class="logo">
+                <img src="../static/icn/icn-STS-blanc.png" width="25" height="25" alt="Logo STS">
+            </div>
+        </a>
+    </footer>
+    <!----> 
+
+    <!-- Script JS -->  
+    <script src="../static/js/levels.js"></script>                
+    <script src="../static/js/classes.js"></script>                
+    <script src="../static/js/univers01.js"></script>         
+    <!--
+    --> 
+</body>
+
+</html>

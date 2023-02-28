@@ -1,0 +1,497 @@
+@charset "UTF-8";
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Make-your-game
+ *  14-11-2022
+ *  */
+/* Utils (variables, mixin, fonction, %placeholder pour extend) */
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Make-your-game
+ *  14-11-2022
+ *  */
+/*import "sass/Utils/_fonctions.sass"*/
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Make-your-game
+ *  14-11-2022
+ *  */
+/*import "sass/Utils/_placeholders.sass"*/
+/* Thèmes */
+/* Vendors (bootsrtap, jquery, ...) */
+/* Base (police, norme, box-sizing, ...) */
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Make-your-game
+ *  14-11-2022
+ *  */
+html, body {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  background: url("../img/spaceship.jpg");
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6, label, p, a {
+  font-family: Bookman Old Style;
+  text-shadow: 0.5rem, 0.5rem, rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin: 10px;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4, input, label {
+  font-size: 1.5rem;
+}
+
+h5, p, a {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Layout (header, footer, main, ...) */
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Make-your-game
+ *  14-11-2022
+ *  */
+nav {
+  width: 99.4%;
+  max-height: 75px;
+  margin: 5px 5px;
+  background: linear-gradient(0deg, rgba(19, 79, 83, 0.8) 0%, rgba(6, 29, 31, 0.8) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  color: rgb(255, 255, 255);
+  height: 48px;
+}
+
+footer {
+  width: 99.4%;
+  max-height: 75px;
+  margin: 5px 5px;
+  background: linear-gradient(0deg, rgba(19, 79, 83, 0.8) 0%, rgba(6, 29, 31, 0.8) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  color: rgb(255, 255, 255);
+  height: 48px;
+}
+
+main, form {
+  width: 100%;
+  max-height: 86%;
+  padding-top: 60px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 7rem;
+  color: rgb(255, 255, 255);
+  width: 40wv;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icn {
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+}
+.icn:hover {
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.infobulle {
+  position: relative;
+  cursor: help;
+}
+.infobulle:hover::after, .infobulle:focus::after {
+  content: attr(aria-label);
+  position: absolute;
+  align-items: left;
+  top: 1.5em;
+  left: 100%;
+  white-space: nowrap;
+  z-index: 1;
+  padding: 5px;
+  background: linear-gradient(0deg, rgb(4, 30, 31) 0%, rgb(5, 46, 56) 100%);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  color: rgb(255, 255, 255);
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(0deg, rgb(4, 30, 31) 0%, rgb(5, 46, 56) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.anim {
+  transition: transform 0.4s ease;
+  transform: scale(0.8);
+}
+.anim:hover {
+  transform: scale(0.9) rotate(2deg);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  margin: 10px 10px;
+  padding: 10px 10px;
+  background: linear-gradient(0deg, #1e1f20 0%, #021518 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+}
+button:hover {
+  background: linear-gradient(0deg, rgb(27, 80, 82) 0%, rgb(8, 39, 41) 100%);
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+button:disabled {
+  color: rgb(255, 255, 255);
+}
+
+select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  margin: 10px 10px;
+  padding: 10px 10px;
+  background: linear-gradient(0deg, #1e1f20 0%, #021518 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: black;
+}
+select:hover {
+  background: linear-gradient(0deg, rgb(27, 80, 82) 0%, rgb(8, 39, 41) 100%);
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  margin: 10px 10px;
+  background: linear-gradient(0deg, #1e1f20 0%, #021518 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  font-family: Bookman Old Style;
+  padding-left: 10px;
+}
+input:hover {
+  background: linear-gradient(0deg, rgb(27, 80, 82) 0%, rgb(8, 39, 41) 100%);
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+input[type=number] {
+  width: 4rem;
+  height: 2rem;
+  color: rgb(255, 255, 255);
+}
+
+.number {
+  width: 60px;
+  color: rgb(255, 255, 255);
+}
+
+.checkbox {
+  width: 11vw;
+  height: 35px;
+  background: linear-gradient(0deg, rgb(4, 30, 31) 0%, rgb(5, 46, 56) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  color: rgb(55, 73, 2);
+}
+.checkbox:hover {
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.checked {
+  color: rgb(255, 255, 255);
+}
+
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Univers 01
+ *  20-02-2023
+ *  */
+#narration {
+  max-width: 80vw;
+  margin: 50px;
+  text-align: center;
+}
+#narration h4 {
+  color: rgb(194, 197, 24);
+}
+
+.gamespace {
+  width: 100%;
+  max-width: 1400px;
+  height: 86vh;
+  margin: 5px 5px;
+  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+}
+
+#gamespace {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(99, 185, 196);
+  font-size: 7rem;
+}
+
+#grille {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  color: rgb(99, 185, 196);
+  font-size: 1rem;
+  position: relative;
+  box-shadow: 0px 0px 5px 1px #76e6e6;
+  border-radius: 0.5rem;
+  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
+  margin-left: 40px;
+}
+
+.refcase {
+  position: absolute;
+  left: auto;
+  top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+.case {
+  position: absolute;
+  left: auto;
+  top: auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.B {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px #76e6e6;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.829) 50%, rgba(43, 42, 42, 0.308) 100%);
+  background-size: 100%;
+  background-position: 50% 47%;
+  opacity: 0.5;
+  scale: 0.9;
+}
+
+@-webkit-keyframes galaxy-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes galaxy-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.P {
+  box-shadow: 0px 0px 5px 1px #76e6e6;
+  border-radius: 10px;
+  scale: 0.9;
+  background: url("../img/Galaxy01.png");
+  background-size: cover;
+  -webkit-animation: galaxy-rotate 30s linear infinite;
+          animation: galaxy-rotate 30s linear infinite;
+}
+
+.PE {
+  box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.4745098039);
+  border-radius: 10px;
+  background: url("../img/Galaxy01.png");
+  background-size: cover;
+  -webkit-animation: galaxy-rotate 30s linear infinite;
+          animation: galaxy-rotate 30s linear infinite;
+}
+
+@-webkit-keyframes planete-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes planete-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.E {
+  z-index: 1;
+  background-size: 107%;
+  background-position: -1px -1px;
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  scale: 0.7;
+  -webkit-animation: planete-rotate 20s linear infinite;
+          animation: planete-rotate 20s linear infinite;
+  transition: 250ms;
+  transform: translate(0, 0);
+}
+
+.F {
+  z-index: 2;
+  background: url("../img/starship.png");
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 250ms;
+  transform: rotate(0deg) translate(0, 0);
+  scale: 1;
+}
+
+#board {
+  width: 23vw;
+  height: 86vh;
+  margin: 5px 5px;
+  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#player {
+  width: 21vw;
+  height: 70px;
+  margin: 5px 5px;
+  background: linear-gradient(0deg, #1b1b04 0%, rgb(94, 84, 10) 100%);
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#player-name {
+  font-size: 1.2rem;
+  color: rgb(194, 197, 24);
+}
+
+#scoreboard {
+  width: 22vw;
+  margin: 5px 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score-player {
+  width: 21vw;
+  height: 100%;
+  margin: 2px 5px;
+  background: linear-gradient(0deg, rgb(2, 13, 14) 0%, rgb(3, 31, 30) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  transform: scale(0.95);
+}
+
+.result {
+  width: 45%;
+}
+
+#resultLevel {
+  height: 78%;
+  overflow: auto;
+}
+
+/* Pages (specifique à la page) */
+/* Components (button, select, input, ... ) */
+/*  Tony Quedeville : tquedevi
+ *  Zone01: Projet Make-your-game
+ *  14-11-2022
+ *  */
+#playSeq {
+  width: 45px;
+  height: 30px;
+  transition: 300ms;
+}
+#playSeq:hover {
+  scale: 1.15;
+}/*# sourceMappingURL=style.css.map */

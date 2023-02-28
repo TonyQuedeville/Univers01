@@ -1,0 +1,49 @@
+/*
+    Tony Quedeville : tquedevi
+    Zone01: Projet Univers 01
+    20-02-2023
+    */
+        
+#board
+    @include rightPanel 
+    
+#player
+    width: 21vw
+    height: 70px
+    margin: 5px 5px 
+    background: $fondScoreBoardSelect
+    box-shadow: $light
+    border: $borderWhite
+    border-radius: $radius
+    display: flex
+    align-items: center
+
+#player-name
+    font-size: nth($fontSizes, 5)
+    color: $yellow
+
+#scoreboard
+    width: 22vw
+    margin: 5px 5px
+    display: flex
+    align-items: center
+    flex-direction: column
+
+.score-player
+    width: 21vw
+    height: 100%
+    margin: 2px 5px
+    background: $fondScoreBoard
+    box-shadow: $shadow
+    border: $borderWhite
+    border-radius: $radius
+    display: flex
+    flex-direction: row
+    transform: scale(.95)
+
+.result
+    width: 45%
+
+#resultLevel
+    height: 78%
+    overflow: auto
