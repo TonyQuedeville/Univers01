@@ -3,9 +3,7 @@
 @author: 
     Tony Quedeville (tquedevi)
 Zone01
-Projet Think-Idea
-
-lien utile : https://tech.mozfr.org/post/2015/08/12/ES6-en-details-:-les-sous-classes-et-l-heritage
+Projet Univers 01
 */
 /*------------------------------------------------------------------------------------------*/
 
@@ -28,7 +26,7 @@ class ClsGame {
         this.nbEssaiLevel = 0 // Nb de tentative par niveau
         //this.LevelScore // Niveau maximum atteint dans la partie
         //this.score = 0
-        //this.timer = (new Date(0)).getTime() // temps de jeux
+        this.timer = "" // temps de jeux
 
         this.nbLevel = levelsBP.length
 
@@ -64,11 +62,13 @@ class ClsGame {
         
         // Score board
         document.getElementById('nbLife').textContent = this.life
+        this.timer = ""
+        start(0)
 
         if(!document.getElementById("resultLevel_" + this.level)){
             this.addResultLevel()
         } else {
-            document.getElementById("resultLevel_" + this.level).textContent = "level " + this.level + " : " + nbEssai
+            document.getElementById("resultLevel_" + this.level).textContent = "Level " + this.level + " - Essai: " + nbEssai + " - Temps: " + this.timer
         }
 
         // Grille
@@ -166,6 +166,12 @@ class ClsGame {
                 this.grilleHTML.append(this.ElemHTML)
             }
         }
+
+        // Ajout du timer
+        this.timerHTML = document.createElement('p')
+        this.timerHTML.id = "timer"
+        //this.timerHTML.style.bottom = this.decalRefGrille + 'px'
+        this.grilleHTML.append(this.timerHTML)
     }
 
     // Affichage du level dans la barre de résultats
@@ -366,8 +372,6 @@ class ClsGame {
                 document.getElementById("F").style.top = caseFTop + "px"
             break
         }
-
-        
     }
 
     // Test si E = P
@@ -384,7 +388,9 @@ class ClsGame {
         
         if(i == this.NbP) { // Si tous les Elements sont sur les Placements
             level++
-            document.getElementById("resultLevel_" + this.level).textContent = "level " + this.level + " : " + nbEssai
+            this.timer = document.getElementById("timer").textContent
+            document.getElementById("resultLevel_" + this.level).textContent = "Level " + this.level + " - Essai: " + nbEssai + " - Temps: " + this.timer
+            clrTimer(true)
 
             if(!demo){
                 this.life++
@@ -392,6 +398,7 @@ class ClsGame {
                 document.getElementById('gamespace').textContent = "Bravo !"
                 pause = true
                 nbEssai = 1
+
                 setTimeout(()=>{
                     spaceGame.initPart(level)
                 }, 1500)
@@ -417,7 +424,7 @@ class ClsGame {
         const resultLevel = document.getElementById("resultLevel")
         const parafLevelHtml = document.createElement('p')
         parafLevelHtml.id = "resultLevel_" + this.level
-        parafLevelHtml.textContent = "level " + this.level + " : " + nbEssai
+        parafLevelHtml.textContent = "Level " + this.level + " - Essai: " + nbEssai  + " - Temps: " + this.timer
         resultLevel.append(parafLevelHtml)
     }
 }

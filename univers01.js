@@ -3,11 +3,9 @@
 @author: 
     Tony Quedeville (tquedevi)
 Zone01
-Projet Think-idea
-
-lien utile : https://learntutorials.net/fr/javascript/topic/1808/requestanimationframe
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
+Projet Univers 01
+*/
+/*------------------------------------------------------------------------------------------*/
 
 // Espace de jeu
 const spaceGame = new ClsGame(Levels.levelsBP, Levels.levelsEF)

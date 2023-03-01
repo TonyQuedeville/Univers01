@@ -3,9 +3,7 @@
 @author: 
     Tony Quedeville (tquedevi)
 Zone01
-Projet Think-Idea
-
-lien utile : https://tech.mozfr.org/post/2015/08/12/ES6-en-details-:-les-sous-classes-et-l-heritage
+Projet Univers 01
 */
 /*------------------------------------------------------------------------------------------*/
 
