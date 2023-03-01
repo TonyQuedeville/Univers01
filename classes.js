@@ -61,7 +61,15 @@ class ClsGame {
         this.levelEF = this.levelsEFInit[this.level-1] // Niveau actuel Grille Element / Fleche
         this.NbP = 0
         initLevel()
+        
+        // Score board
         document.getElementById('nbLife').textContent = this.life
+
+        if(!document.getElementById("resultLevel_" + this.level)){
+            this.addResultLevel()
+        } else {
+            document.getElementById("resultLevel_" + this.level).textContent = "level " + this.level + " : " + nbEssai
+        }
 
         // Grille
         this.nbCol = this.levelBP[0].length
@@ -72,7 +80,6 @@ class ClsGame {
         
         if(document.getElementById('grille')){
             document.getElementById('grille').remove()
-            console.log("remove grille !");
         }
         
         // Ajout de la div "grille"
@@ -376,19 +383,15 @@ class ClsGame {
         }
         
         if(i == this.NbP) { // Si tous les Elements sont sur les Placements
-            const resultLevel = document.getElementById("resultLevel")
-            const parafLevelHtml = document.createElement('p')
-            parafLevelHtml.textContent = "level " + this.level + " : " + nbEssai
-            resultLevel.append(parafLevelHtml)
-
             level++
-            nbEssai = 1
+            document.getElementById("resultLevel_" + this.level).textContent = "level " + this.level + " : " + nbEssai
 
             if(!demo){
                 this.life++
                 document.getElementById('nbLife').textContent = this.life
                 document.getElementById('gamespace').textContent = "Bravo !"
                 pause = true
+                nbEssai = 1
                 setTimeout(()=>{
                     spaceGame.initPart(level)
                 }, 1500)
@@ -397,8 +400,7 @@ class ClsGame {
             }
 
             if(level > this.nbLevel){
-                document.getElementById('gamespace').textContent = "Jeux terminé Bravo !"
-                setTimeout(()=>{location.reload()}, 2000)
+                displayFinPartie(false)
             }
         }
     }
@@ -409,6 +411,14 @@ class ClsGame {
     }
     static set FLig(lig) {
         this._FLig = lig
+    }
+
+    addResultLevel(){
+        const resultLevel = document.getElementById("resultLevel")
+        const parafLevelHtml = document.createElement('p')
+        parafLevelHtml.id = "resultLevel_" + this.level
+        parafLevelHtml.textContent = "level " + this.level + " : " + nbEssai
+        resultLevel.append(parafLevelHtml)
     }
 }
 

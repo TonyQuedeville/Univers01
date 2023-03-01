@@ -49,20 +49,8 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
-// Restart level
-document.getElementById('restartLevel').addEventListener('click', () => {
-    spaceGame.initPart(level)
-    nbEssai++
-})
-
-// Nouvelle Partie
-document.getElementById('newPart').addEventListener('click', () => {
-    location.reload()
-})
-
-
 function jouer(){
-    spaceGame.initPart(level) 
+    spaceGame.initPart(level)
     spaceGame.TestEP()
 
     // Selection level
@@ -109,14 +97,13 @@ function jouer(){
                     break;
 
                 case "r": // reset level
-                    spaceGame.initPart(level)
                     nbEssai++
+                    spaceGame.initPart(level)
                     spaceGame.life--
                     document.getElementById('nbLife').textContent = spaceGame.life
-                    if(spaceGame.life <= 0){
-                        document.getElementById('gamespace').textContent = "Perdu !"
-                        setTimeout(()=>{location.reload()}, 2000)
-                        return
+
+                    if(spaceGame.life <= 0){ // fin de partie quand nb de vie = 0
+                        displayFinPartie()
                     }
                     break;
 
@@ -127,9 +114,10 @@ function jouer(){
                 case "s": // play solution
                     spaceGame.initPart(level) 
                     playSequence(level) 
-                    nbEssai+=3
+                    nbEssai+=3 // 3 essai supplémentaire
+                    spaceGame.life-- // 1 vies en moins
+                    document.getElementById('nbLife').textContent = spaceGame.life
                     seq = []
-                    //spaceGame.initPart(level)
                     break;
 
                 /*case "f": // simulation de fin de jeu pour debuguage
@@ -159,7 +147,16 @@ function jouer(){
         }
     })
 
-    
+    // Restart level
+    document.getElementById('restartLevel').addEventListener('click', () => {
+        spaceGame.initPart(level)
+        nbEssai++
+    })
+
+    // Nouvelle Partie
+    document.getElementById('newPart').addEventListener('click', () => {
+        location.reload()
+    })
 
     document.addEventListener('keyup', (e) => {
         if(!pause){
@@ -191,6 +188,9 @@ function jouer(){
     document.getElementById('playSeq').addEventListener('click', () => {
         spaceGame.initPart(level) 
         playSequence(level) 
+        nbEssai+=3 // 3 essai supplémentaire
+        spaceGame.life-- // 1 vies en moins
+        document.getElementById('nbLife').textContent = spaceGame.life
         seq = []
     })
 
@@ -273,6 +273,50 @@ function jouer(){
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
+function displayFinPartie(perdu = true){
+    const gameSpaceHtml = document.getElementById('gamespace')
+
+    if (perdu){
+        gameSpaceHtml.textContent = "Perdu !"
+    } else {
+        gameSpaceHtml.textContent = "Jeux terminé Bravo !"
+    }
+
+    const commencerHtml = document.createElement('div')
+    commencerHtml.id = "commencer"
+    commencerHtml.classList = "vertical center"
+    gameSpaceHtml.append(commencerHtml)
+
+    const imgQuitterHtml = document.createElement('img')
+    imgQuitterHtml.id = "quitter"
+    imgQuitterHtml.src = "./static/icn/icn-retour.png"
+    commencerHtml.append(imgQuitterHtml)
+
+    const parafQuitHtml = document.createElement('p')
+    parafQuitHtml.textContent = '"Enter" Ok :'
+    commencerHtml.append(parafQuitHtml)
+
+    /*
+    <div id="commencer" class="vertical center">
+        <img id="quitter" src="./static/icn/icn-retour.png" >
+        <p>"Enter" Ok :</p>
+    </div>
+    //*/
+    
+
+    document.getElementById('quitter').addEventListener('click', () => {
+        location.reload()
+    })
+    document.addEventListener('keydown', (e) => {
+        if (e.key == "Enter"){
+            location.reload()
+        }
+    })
+
+    //setTimeout(()=>{location.reload()}, 10000)
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
 // Temps
 const delay = (ms) => {
