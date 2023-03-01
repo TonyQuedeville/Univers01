@@ -19,17 +19,16 @@ let moving_left = false
 let moving_right = false
 let moving_up = false
 let moving_down = false
-let seq = []
-let nbEssai = 1
-let pause = false
-let demo = false
-
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
 // Initialisation de l'espace de jeu en fonction du level
+let pause = false
+let demo = false
+let seq = []
 let level = 1
 let Life = 5
+let nbEssai = 1
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
@@ -52,14 +51,6 @@ document.addEventListener('keydown', (e) => {
 function jouer(){
     spaceGame.initPart(level)
     spaceGame.TestEP()
-
-    // Selection level
-    /*document.getElementById('selectLevel').addEventListener('change', (e) => {
-        level = e.target.value
-        spaceGame.initPart(level) 
-        spaceGame.TestEP()
-    })
-    //*/
 
     document.addEventListener('keydown', (e) => {
         if(!pause){
@@ -119,12 +110,6 @@ function jouer(){
                     document.getElementById('nbLife').textContent = spaceGame.life
                     seq = []
                     break;
-
-                /*case "f": // simulation de fin de jeu pour debuguage
-                    document.getElementById('gamespace').textContent = "Jeux terminé Bravo !"
-                    setTimeout(()=>{location.reload()}, 2000)
-                    break;
-                    //*/
 
                 case "PageUp":
                     level++
@@ -289,20 +274,12 @@ function displayFinPartie(perdu = true){
 
     const imgQuitterHtml = document.createElement('img')
     imgQuitterHtml.id = "quitter"
-    imgQuitterHtml.src = "./static/icn/icn-retour.png"
+    imgQuitterHtml.src = "./static/icn/icn-play.png"
     commencerHtml.append(imgQuitterHtml)
 
     const parafQuitHtml = document.createElement('p')
     parafQuitHtml.textContent = '"Enter" Ok :'
     commencerHtml.append(parafQuitHtml)
-
-    /*
-    <div id="commencer" class="vertical center">
-        <img id="quitter" src="./static/icn/icn-retour.png" >
-        <p>"Enter" Ok :</p>
-    </div>
-    //*/
-    
 
     document.getElementById('quitter').addEventListener('click', () => {
         location.reload()
@@ -312,8 +289,6 @@ function displayFinPartie(perdu = true){
             location.reload()
         }
     })
-
-    //setTimeout(()=>{location.reload()}, 10000)
 }
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
