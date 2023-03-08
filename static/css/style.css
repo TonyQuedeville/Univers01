@@ -350,10 +350,10 @@ input[type=number] {
 }
 
 #timer {
-  position: absolute;
-  left: -10px;
-  top: 18px;
-  rotate: 45deg;
+  translate: 0 -7px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   font-size: 1.2rem;
   color: rgb(99, 185, 196);
   padding: 0px 5px;

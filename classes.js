@@ -85,7 +85,7 @@ class ClsGame {
         // Ajout de la div "grille"
         this.grilleHTML = document.createElement('div')
         this.grilleHTML.id = "grille"
-        this.grilleHTML.style.width = this.grilleLarg + this.decalRefGrille + 'px'
+        this.grilleHTML.style.width = this.grilleLarg + 'px'
         this.grilleHTML.style.height = this.grilleHaut + this.decalRefGrille + 'px'
         this.gamespaceHTML.append(this.grilleHTML)
 
@@ -96,7 +96,7 @@ class ClsGame {
         for(let lig=0; lig<this.nbLig; lig++){
             for(let col=0; col<this.nbCol; col++){ 
                 // Reférences cases Colonnes         
-                if(lig == 0){
+                /*if(lig == 0){
                     const refCaseColHTML = document.createElement('div')
                     refCaseColHTML.id = "refcase_" + lig + "_" + col 
                     refCaseColHTML.textContent = "C" + col
@@ -120,6 +120,7 @@ class ClsGame {
                     refCaseLigHTML.style.top = (this.sizeCase * lig) + this.decalRefGrille + 'px'
                     this.grilleHTML.append(refCaseLigHTML)
                 }
+                //*/
 
                 // Briques et Placement           
                 const typeCase = this.levelBP[lig][col]
@@ -128,7 +129,7 @@ class ClsGame {
                 caseHTML.classList = "case " + typeCase
                 caseHTML.style.width = this.sizeCase + 'px'
                 caseHTML.style.height = this.sizeCase + 'px'
-                caseHTML.style.left = (this.sizeCase * col) + this.decalRefGrille + 'px'
+                caseHTML.style.left = (this.sizeCase * col) + 'px'
                 caseHTML.style.top = (this.sizeCase * lig) + this.decalRefGrille + 'px'
                 this.grilleHTML.append(caseHTML)
 
@@ -145,7 +146,7 @@ class ClsGame {
                 this.ElemHTML.classList = "case " + typeEF.substr(0, 1)
                 this.ElemHTML.style.width = this.sizeCase + 'px'
                 this.ElemHTML.style.height = this.sizeCase + 'px'
-                this.ElemHTML.style.left = (this.sizeCase * col) + this.decalRefGrille + 'px'
+                this.ElemHTML.style.left = (this.sizeCase * col) + 'px'
                 this.ElemHTML.style.top = (this.sizeCase * lig) + this.decalRefGrille + 'px'
 
                 if(typeEF.substr(0, 1) == "E"){
