@@ -520,6 +520,9 @@ input[type=number] {
 #resultLevel {
   height: 78%;
   overflow: auto;
+  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
 }
 
 /* Pages (specifique à la page) */
