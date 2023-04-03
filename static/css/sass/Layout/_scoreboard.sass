@@ -6,12 +6,14 @@
         
 #board
     @include rightPanel
-    height: 93vh
+    //height: 93vh
+    padding: 6px
+    touch-action: manipulation
 
     @include xl
         @include paysage
             width: 30vw
-            height: 98vh
+            //height: 90vh
 
     @include portrait
         flex-direction: row
@@ -30,10 +32,11 @@
         min-height: 90%
 
 #cmdBox
+    touch-action: manipulation
+
     @include paysage
         max-width: 90%
-        height: 39%
-        transform: scale(1.3)
+        transform: scale(1.2)
 
     @include portrait
         width: 25%
@@ -79,7 +82,7 @@
     width: 25%
     
     &:hover
-        scale: (1.2)
+        scale: (1.1)
 
 #cmdRestart
     display: flex
