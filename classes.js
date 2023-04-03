@@ -68,7 +68,7 @@ class ClsGame {
         if(!document.getElementById("resultLevel_" + this.level)){
             this.addResultLevel()
         } else {
-            document.getElementById("resultLevel_" + this.level).textContent = "Level " + this.level + " - Essai: " + nbEssai + " - Temps: " + this.timer
+            document.getElementById("resultLevel_" + this.level).textContent = this.level + " - " + nbEssai + " - " + this.timer
         }
 
         // Grille
@@ -171,7 +171,6 @@ class ClsGame {
         // Ajout du timer
         this.timerHTML = document.createElement('p')
         this.timerHTML.id = "timer"
-        //this.timerHTML.style.bottom = this.decalRefGrille + 'px'
         this.grilleHTML.append(this.timerHTML)
     }
 
@@ -184,20 +183,6 @@ class ClsGame {
     displayScore(){
         document.getElementById("nbEssaiLevel").textContent = this.nbEssaiLevel
     }
-
-    // Affichage du timer dans la barre de résultats
-    /*displayTime(){
-        const date = new Date(this.timer)
-        let hour = date.getHours() - 1
-        if(hour < 10) {hour = "0" + hour} 
-        let minute = date.getMinutes()
-        if(minute < 10) {minute = "0" + minute}
-        let second = date.getSeconds()
-        if(second < 10) {second = "0" + second}
-
-        document.getElementById("timer").textContent = hour + ":" + minute + ":" + second
-    }
-    //*/
 
     /* Déplacement de la fleche */
     moveFleche(moving_left, moving_right, moving_up, moving_down){
@@ -388,11 +373,11 @@ class ClsGame {
         }
         
         if(i == this.NbP) { // Si tous les Elements sont sur les Placements
-            level++
             this.timer = document.getElementById("timer").textContent
-            document.getElementById("resultLevel_" + this.level).textContent = "Level " + this.level + " - Essai: " + nbEssai + " - Temps: " + this.timer
+            document.getElementById("resultLevel_" + this.level).textContent = this.level + " - " + nbEssai + " - " + this.timer
             clrTimer(true)
-
+            
+            level++
             if(!demo){
                 this.life++
                 document.getElementById('nbLife').textContent = this.life
@@ -409,6 +394,8 @@ class ClsGame {
 
             if(level > this.nbLevel){
                 displayFinPartie(false)
+            } else {
+                //level++
             }
         }
     }
@@ -425,7 +412,7 @@ class ClsGame {
         const resultLevel = document.getElementById("resultLevel")
         const parafLevelHtml = document.createElement('p')
         parafLevelHtml.id = "resultLevel_" + this.level
-        parafLevelHtml.textContent = "Level " + this.level + " - Essai: " + nbEssai  + " - Temps: " + this.timer
+        parafLevelHtml.textContent = this.level + " - " + nbEssai + " - " + this.timer
         resultLevel.append(parafLevelHtml)
     }
 }

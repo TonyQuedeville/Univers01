@@ -31,6 +31,10 @@ let nbEssai = 1
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
 // Ecoutes
+const a = () =>{
+    console.log("resize !")
+}
+window.addEventListener('resize', a)
 
 // Commencer à jouer
 document.getElementById('start').addEventListener('click', () => {
@@ -38,6 +42,7 @@ document.getElementById('start').addEventListener('click', () => {
     document.getElementById('narration').style.display = "none"
     jouer()
 })
+
 document.addEventListener('keydown', (e) => {
     if (e.key == "Enter"){
         level = 1
@@ -49,6 +54,46 @@ document.addEventListener('keydown', (e) => {
 function jouer(){
     spaceGame.initPart(level)
     spaceGame.TestEP()
+
+    document.getElementById("cmdGauche").addEventListener('click', () => {
+        moving_left = true
+        moving_right = false
+        moving_up = false
+        moving_down = false
+        seq.push("G")
+        spaceGame.moveFleche(moving_left, moving_right, moving_up, moving_down)
+        spaceGame.TestEP()
+    })
+
+    document.getElementById("cmdDroite").addEventListener('click', () => {
+        moving_left = false
+        moving_right = true
+        moving_up = false
+        moving_down = false
+        seq.push("D")
+        spaceGame.moveFleche(moving_left, moving_right, moving_up, moving_down)
+        spaceGame.TestEP()
+    })
+
+    document.getElementById("cmdHaut").addEventListener('click', () => {
+        moving_left = false
+        moving_right = false
+        moving_up = true
+        moving_down = false
+        seq.push("H")
+        spaceGame.moveFleche(moving_left, moving_right, moving_up, moving_down)
+        spaceGame.TestEP()
+    })
+
+    document.getElementById("cmdBas").addEventListener('click', () => {
+        moving_left = false
+        moving_right = false
+        moving_up = false
+        moving_down = true
+        seq.push("B")
+        spaceGame.moveFleche(moving_left, moving_right, moving_up, moving_down)
+        spaceGame.TestEP()
+    })
 
     document.addEventListener('keydown', (e) => {
         if(!pause){
@@ -131,15 +176,16 @@ function jouer(){
     })
 
     // Restart level
-    document.getElementById('restartLevel').addEventListener('click', () => {
+    document.getElementById('cmdRestart').addEventListener('click', () => {
         spaceGame.initPart(level)
         nbEssai++
     })
 
     // Nouvelle Partie
-    document.getElementById('newPart').addEventListener('click', () => {
+    /*document.getElementById('newPart').addEventListener('click', () => {
         location.reload()
     })
+    //*/
 
     document.addEventListener('keyup', (e) => {
         if(!pause){
@@ -178,7 +224,7 @@ function jouer(){
     })
 
     // Play demo
-    let playDemo = false
+    /*let playDemo = false
     document.getElementById('playDemo').addEventListener('click', () => {
         if(!playDemo){
             playDemo = true
@@ -190,6 +236,7 @@ function jouer(){
             location.reload()
         }
     })
+    //*/
 
     // Sequences
     function playSequence(level, demo=false){

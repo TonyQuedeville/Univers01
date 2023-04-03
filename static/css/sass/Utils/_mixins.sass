@@ -23,7 +23,15 @@
 
 @mixin xxl
     @media screen and (max-width: 1536px)
-        @content    
+        @content   
+
+@mixin portrait
+    @media screen and (orientation: portrait)
+        @content
+
+@mixin paysage
+    @media screen and (orientation: landscape)
+        @content
 
 
 // Header, Nav, Footer
@@ -39,7 +47,7 @@
     display: flex
     justify-content: space-around
     align-items: center 
-    position: fixed
+    //position: fixed
     color: $white
 
 @mixin input
@@ -77,7 +85,6 @@
 
 @mixin rightPanel
     width: 23vw
-    //max-width: 20vw
     height: 86vh
     margin: 5px 5px 
     background: $fondContainerTrans
@@ -90,9 +97,7 @@
     flex-direction: column  
 
 @mixin spaceGame
-    width: 100%
-    max-width: $maxWidth
-    height: 86vh
+    //max-width: $maxWidth
     margin: 5px 5px 
     border: $borderWhite
     border-radius: $radius

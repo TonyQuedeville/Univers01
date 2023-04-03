@@ -8,30 +8,12 @@
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
-<body>
-    <!-- Entête -->
-    <nav>
-        <div class="horizontal center">
-            <button id="newPart">N : Nouvelle partie</button>
-            <button id="restartLevel">R : Restart level</button>
-        </div>
-        <div class="horizontal center">
-            <h3>Univers 01</h3>
-        </div>
-        <div class="horizontal center">
-            <button id="playDemo">Demo</button>
-            <!--<label >Level :</label>
-            <input type="number" id="selectLevel" min="1" max="27" value="1">--> 
-        </div>
-    </nav>  
-    <!----> 
-
-    
+<body>    
     <main>
-        <img id="galaxy01" src="./static/img/Galaxy01.png" alt="">
+        <img id="galaxy01" src="./static/img/Galaxy01.png">
         <div id="gamespace" class="gamespace">   
             <div  class="vertical center">
-                <h1> Univers 01 </h1>
+                <h1>Univers 01</h1>
                 <div id="narration">
                     <p>A bord de votre vaisseau, votre mission est de ramenner les planètes perdues dans une des galaxies de l'univers 01.</p>
                     <p>Trouver les solutions de chaque niveau en moins d'essai possible.</p>
@@ -53,23 +35,41 @@
         </div>
 
         <div id="board">
-            <div class="horizontal center">
-                <p>Solution</p>
-                <img id="playSeq" src="./static/icn/icn-play.png" alt="play sequence solution">
-            </div>
-            
-            <div class="horizontal center">
-                <p >nombre de vie :</p>
-                <p id="nbLife"></p>
+            <div id="infoBoard" class="verticale">
+                <div class="horizontal center">
+                    <div id="cmdRestart" class="" >Retour</div>
+                    <p>Solution</p>
+                    <img id="playSeq" src="./static/icn/icn-play.png" alt="play sequence solution">
+                </div>
+                
+                <div class="horizontal center">
+                    <p>nombre de vie :</p>
+                    <p id="nbLife"></p>
+                </div>
+
+                <div class="horizontal center">
+                    <p >Level - Essai - Temps</p>
+                    <p id="nbEssaiLevel"></p>
+                </div>
+                
+                <div id="resultLevel" class="vertical"></div>
             </div>
 
-            <div class="horizontal center">
-                <p >nombre d'essai : timer</p>
-                <p id="nbEssaiLevel"></p>
+            <div id="cmdBox">
+                <div class="center" >
+                    <img id="cmdHaut" class="cmd" src="./static/icn/icn-play.png">
+                </div>
+                <div class="center" >
+                    <img id="cmdGauche" class="cmd" src="./static/icn/icn-retour.png">
+                    <div id="" class="" >
+                        <img id="" src="./static/img/starship.png" width="70px" alt="Control direction">
+                    </div>
+                    <img id="cmdDroite" class="cmd" src="./static/icn/icn-play.png">
+                </div>
+                <div class="center" >
+                    <img id="cmdBas" class="cmd" src="./static/icn/icn-retour.png">
+                </div>
             </div>
-
-            <div id="resultLevel" class="vertical"></div>
-
         </div>
     </main>
     
@@ -84,7 +84,7 @@
         </a>
     </footer>
     <!----> 
-
+    
     <!-- Script JS -->  
     <script src="./timer.js"></script>                
     <script src="./levels.js"></script>                
@@ -93,5 +93,5 @@
     <!--
     --> 
 </body>
-
+    
 </html>
