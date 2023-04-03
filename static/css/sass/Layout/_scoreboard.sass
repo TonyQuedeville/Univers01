@@ -13,19 +13,23 @@
     @include xl
         @include paysage
             width: 30vw
-            //height: 90vh
+            height: 81vh
 
     @include portrait
         flex-direction: row
         justify-content: space-around
-        width: 99%
+        width: 97.5%
         height: 55vh
         overflow: auto
 
 #infoBoard
     @include paysage
         max-width: 90%
-        height: 61%
+        min-height: 61%
+
+    @include xl
+        @include paysage
+            min-height: 31%
 
     @include portrait
         width: 45%
@@ -33,10 +37,13 @@
 
 #cmdBox
     touch-action: manipulation
+    //display: none
+    margin-top: 20px
 
-    @include paysage
-        max-width: 90%
-        transform: scale(1.2)
+    @include xl
+        @include paysage
+            max-width: 90%
+            transform: scale(1.2)
 
     @include portrait
         width: 25%
@@ -73,6 +80,10 @@
     box-shadow: $shadow
     border: $borderWhite
     border-radius: $radius
+
+    @include xl
+        @include paysage
+            display: none
 
     @include portrait
         height: 40vh

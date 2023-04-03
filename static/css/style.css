@@ -108,10 +108,12 @@ main {
   margin-bottom: 10px;
   justify-content: center;
 }
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 1280px) and (orientation: landscape) {
   main {
+    margin-top: 6%;
     flex-direction: row;
-    height: 90%;
+    width: 95%;
+    height: 86%;
   }
 }
 @media screen and (orientation: portrait) {
@@ -347,6 +349,11 @@ input[type=number] {
   margin-left: 40px;
 }
 
+@media screen and (max-width: 1280px) {
+  #instructionClavier {
+    display: none;
+  }
+}
 .refcase {
   position: absolute;
   left: auto;
@@ -498,13 +505,14 @@ input[type=number] {
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   #board {
     width: 30vw;
+    height: 81vh;
   }
 }
 @media screen and (orientation: portrait) {
   #board {
     flex-direction: row;
     justify-content: space-around;
-    width: 99%;
+    width: 97.5%;
     height: 55vh;
     overflow: auto;
   }
@@ -513,7 +521,12 @@ input[type=number] {
 @media screen and (orientation: landscape) {
   #infoBoard {
     max-width: 90%;
-    height: 61%;
+    min-height: 61%;
+  }
+}
+@media screen and (max-width: 1280px) and (orientation: landscape) {
+  #infoBoard {
+    min-height: 31%;
   }
 }
 @media screen and (orientation: portrait) {
@@ -525,8 +538,9 @@ input[type=number] {
 
 #cmdBox {
   touch-action: manipulation;
+  margin-top: 20px;
 }
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 1280px) and (orientation: landscape) {
   #cmdBox {
     max-width: 90%;
     transform: scale(1.2);
@@ -573,6 +587,11 @@ input[type=number] {
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 0.5rem;
+}
+@media screen and (max-width: 1280px) and (orientation: landscape) {
+  #resultLevel {
+    display: none;
+  }
 }
 @media screen and (orientation: portrait) {
   #resultLevel {

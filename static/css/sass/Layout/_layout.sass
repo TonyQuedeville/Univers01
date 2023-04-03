@@ -23,9 +23,12 @@ main
     margin-bottom: 10px
     justify-content: center
 
-    @include paysage
-        flex-direction: row
-        height: 90%
+    @include xl
+        @include paysage
+            margin-top: 6%
+            flex-direction: row
+            width: 95%
+            height: 86%
     @include portrait
         flex-direction: column
         height: 96%
