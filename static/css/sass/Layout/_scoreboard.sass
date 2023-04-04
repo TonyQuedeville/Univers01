@@ -85,7 +85,7 @@
 
 #resultLevel
     max-width: 99%
-    height: 52%
+    height: 59vh
     overflow: auto
     background: $fondContainerTrans
     box-shadow: $shadow
@@ -97,9 +97,6 @@
         @include paysage
             //display: none
             height: 4em
-
-    @include portrait
-        height: 40vh
 
 .cmd
     transition: 100ms
@@ -132,3 +129,21 @@
 #cmdHaut, #cmdBas    
     rotate: 270deg
     margin: 10px
+
+#cmdDemo
+    display: flex
+    justify-content: center
+    align-item: center 
+    font-size: nth($fontSizes,4)
+    color: $white
+    margin: 25px
+    padding: 5px 10px
+    background: $fondContainerTrans
+    box-shadow: $shadow
+    border: $borderWhite
+    border-radius: $radius
+    transition: 100ms
+    &:hover
+        scale: (1.1)
+    +xl
+        display: none

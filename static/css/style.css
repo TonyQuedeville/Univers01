@@ -117,7 +117,7 @@ main {
 }
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   main {
-    margin-top: 6%;
+    margin-top: 7%;
     flex-direction: row;
     width: 100%;
     height: 86%;
@@ -607,7 +607,7 @@ input[type=number] {
 
 #resultLevel {
   max-width: 99%;
-  height: 52%;
+  height: 59vh;
   overflow: auto;
   background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
@@ -618,11 +618,6 @@ input[type=number] {
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   #resultLevel {
     height: 4em;
-  }
-}
-@media screen and (orientation: portrait) {
-  #resultLevel {
-    height: 40vh;
   }
 }
 
@@ -664,6 +659,29 @@ input[type=number] {
 #cmdHaut, #cmdBas {
   rotate: 270deg;
   margin: 10px;
+}
+
+#cmdDemo {
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  margin: 25px;
+  padding: 5px 10px;
+  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
+  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  transition: 100ms;
+}
+#cmdDemo:hover {
+  scale: 1.1;
+}
+@media screen and (max-width: 1280px) {
+  #cmdDemo {
+    display: none;
+  }
 }
 
 /* Pages (specifique à la page) */

@@ -225,8 +225,8 @@ function jouer(){
     })
 
     // Play demo
-    /*let playDemo = false
-    document.getElementById('playDemo').addEventListener('click', () => {
+    let playDemo = false
+    document.getElementById('cmdDemo').addEventListener('click', () => {
         if(!playDemo){
             playDemo = true
             level = 1
