@@ -5,46 +5,56 @@
     */
         
 #board
-    @include rightPanel
-    //height: 93vh
-    padding: 6px
+    //@include rightPanel
+    margin: 5px 5px 
+    //height: auto //92vh
     touch-action: manipulation
 
-    @include xl
-        @include paysage
+    +xl
+        +paysage
             width: 40vw
-            height: 81vh
+            //height: auto //84vh
 
-    @include portrait
+    +portrait
         display: none
 
 #infoBoard
-    @include paysage
+    +paysage
         max-width: 90%
         min-height: 61%
 
-    @include xl
+    +xl
         @include paysage
             min-height: 31%
 
-    @include portrait
+    +portrait
         width: 45%
         min-height: 90%
 
 #cmdBox
     touch-action: manipulation
     //display: none
-    margin-top: 20px
+    margin-top: 30px
+    position: relative
 
-    @include xl
-        @include paysage
+    +xl
+        +paysage
             max-width: 90%
             transform: scale(1.2)
 
-    @include portrait
+    +portrait
         width: 25%
         transform: scale(2)
         margin-right: 20px
+
+#nbLife
+    position: absolute
+    top: 92px
+    left: 103px
+    +xl
+        +paysage
+        top: 97px
+        left: 120px
 
 #scoreboard
     width: 22vw
@@ -81,12 +91,12 @@
     box-shadow: $shadow
     border: $borderWhite
     border-radius: $radius
+    margin: 10px
 
     @include xl
         @include paysage
             //display: none
             height: 4em
-            margin-bottom: 10px
 
     @include portrait
         height: 40vh

@@ -23,17 +23,20 @@
     color:  $lightblue
     font-size: nth($fontSizes, 1)
     width: 100%
+    //height: auto //93.2vh
     touch-action: manipulation
-    
-    @include xl
-        @include paysage
-            #portrait-warning
-                display: none
+    #portrait-warning
+        display: none
 
-    @include portrait
+    +xl
+        +paysage
+            //height: auto
+    +portrait
         width: 99% 
         padding-top: 100px
         padding-bottom: 100px
+        #portrait-warning
+            display: flex
         #commencer
             display: none
 

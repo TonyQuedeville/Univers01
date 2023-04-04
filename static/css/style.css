@@ -110,6 +110,7 @@ footer {
 main {
   display: flex;
   width: 100%;
+  height: 93.5%;
   padding-top: 0px;
   margin-bottom: 10px;
   justify-content: center;
@@ -322,16 +323,17 @@ input[type=number] {
   width: 100%;
   touch-action: manipulation;
 }
-@media screen and (max-width: 1280px) and (orientation: landscape) {
-  #gamespace #portrait-warning {
-    display: none;
-  }
+#gamespace #portrait-warning {
+  display: none;
 }
 @media screen and (orientation: portrait) {
   #gamespace {
     width: 99%;
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+  #gamespace #portrait-warning {
+    display: flex;
   }
   #gamespace #commencer {
     display: none;
@@ -510,22 +512,12 @@ input[type=number] {
  *  20-02-2023
  *  */
 #board {
-  width: 23vw;
-  height: 86vh;
   margin: 5px 5px;
-  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 6px;
   touch-action: manipulation;
 }
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   #board {
     width: 40vw;
-    height: 81vh;
   }
 }
 @media screen and (orientation: portrait) {
@@ -554,7 +546,8 @@ input[type=number] {
 
 #cmdBox {
   touch-action: manipulation;
-  margin-top: 20px;
+  margin-top: 30px;
+  position: relative;
 }
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   #cmdBox {
@@ -570,6 +563,17 @@ input[type=number] {
   }
 }
 
+#nbLife {
+  position: absolute;
+  top: 92px;
+  left: 103px;
+}
+@media screen and (max-width: 1280px) {
+  #nbLife {
+    top: 97px;
+    left: 120px;
+  }
+}
 #scoreboard {
   width: 22vw;
   margin: 5px 5px;
@@ -609,11 +613,11 @@ input[type=number] {
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 0.5rem;
+  margin: 10px;
 }
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   #resultLevel {
     height: 4em;
-    margin-bottom: 10px;
   }
 }
 @media screen and (orientation: portrait) {

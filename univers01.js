@@ -33,6 +33,7 @@ let nbEssai = 1
 // Ecoutes
 const a = () =>{
     console.log("resize !")
+    location.reload()
 }
 window.addEventListener('resize', a)
 
@@ -321,10 +322,6 @@ function displayFinPartie(perdu = true){
     imgQuitterHtml.id = "quitter"
     imgQuitterHtml.src = "./static/icn/icn-play.png"
     commencerHtml.append(imgQuitterHtml)
-
-    const parafQuitHtml = document.createElement('p')
-    parafQuitHtml.textContent = '"Enter" Ok :'
-    commencerHtml.append(parafQuitHtml)
 
     document.getElementById('quitter').addEventListener('click', () => {
         location.reload()

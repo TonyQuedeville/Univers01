@@ -72,7 +72,7 @@ class ClsGame {
         // Grille
         this.nbCol = this.levelBP[0].length
         this.nbLig = this.levelBP.length
-        this.sizeCase = this.width / 19
+        this.sizeCase = this.width / 20// 19
         this.grilleLarg = this.nbCol * this.sizeCase
         this.grilleHaut = this.nbLig * this.sizeCase
         
