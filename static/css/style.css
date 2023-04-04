@@ -606,7 +606,7 @@ input[type=number] {
 }
 
 #resultLevel {
-  max-width: 99%;
+  width: 99%;
   height: 59vh;
   overflow: auto;
   background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);

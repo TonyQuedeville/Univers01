@@ -105,6 +105,7 @@ function jouer(){
                     moving_up = false
                     moving_down = false
                     seq.push("G")
+                    document.getElementById("cmdGauche").style.scale = 1.1
                     break;
 
                 case "ArrowRight" : 
@@ -113,6 +114,7 @@ function jouer(){
                     moving_up = false
                     moving_down = false
                     seq.push("D")
+                    document.getElementById("cmdDroite").style.scale = 1.1
                     break;
 
                 case "ArrowUp" : 
@@ -121,6 +123,7 @@ function jouer(){
                     moving_up = true
                     moving_down = false
                     seq.push("H")
+                    document.getElementById("cmdHaut").style.scale = 1.1
                     break;
 
                 case "ArrowDown" : 
@@ -129,6 +132,7 @@ function jouer(){
                     moving_up = false
                     moving_down = true
                     seq.push("B")
+                    document.getElementById("cmdBas").style.scale = 1.1
                     break;
 
                 case "r": // reset level
@@ -193,18 +197,22 @@ function jouer(){
             switch (e.key){
                 case "ArrowLeft" :
                     moving_left = false
+                    document.getElementById("cmdGauche").style.scale = 1
                     break;
 
                 case "ArrowRight" :
                     moving_right = false
+                    document.getElementById("cmdDroite").style.scale = 1
                     break;
 
                 case "ArrowUp" :
                     moving_up = false
+                    document.getElementById("cmdHaut").style.scale = 1
                     break;
 
                 case "ArrowDown" :
                     moving_down = false
+                    document.getElementById("cmdBas").style.scale = 1
                     break;
 
                 default:
