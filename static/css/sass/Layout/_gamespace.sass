@@ -23,16 +23,23 @@
     color:  $lightblue
     font-size: nth($fontSizes, 1)
     width: 100%
-    //height: 93vh
     touch-action: manipulation
     
     @include xl
         @include paysage
-            //height: 90vh
+            #portrait-warning
+                display: none
 
     @include portrait
         width: 99% 
-        height: 40vh
+        padding-top: 100px
+        padding-bottom: 100px
+        #commencer
+            display: none
+
+#portrait-warning
+    margin: 20px
+    text-align: center
 
 #galaxy01
     position: absolute
@@ -59,9 +66,10 @@
     //padding: 15px
 
 #instructionClavier
-    @include xl
-        @include paysage
+    +xl
+        +paysage
         display: none
+
 
 .refcase
     position: absolute

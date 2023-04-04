@@ -5,31 +5,32 @@
     */
 
 // Responsive: Media queries
-@mixin small
+// = equivaux à @mixin , + equivaux à @include
+=small
     @media screen and (max-width: 640px)
         @content
 
-@mixin medium
+=medium
     @media screen and (max-width: 768px) // mon tel 1600 x 720px
         @content
 
-@mixin large
+=large
     @media screen and (max-width: 1024px)
         @content
 
-@mixin xl
+=xl
     @media screen and (max-width: 1280px)
         @content
 
-@mixin xxl
+=xxl
     @media screen and (max-width: 1536px)
         @content   
 
-@mixin portrait
+=portrait
     @media screen and (orientation: portrait)
         @content
 
-@mixin paysage
+=paysage
     @media screen and (orientation: landscape)
         @content
 

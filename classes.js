@@ -67,14 +67,12 @@ class ClsGame {
 
         if(!document.getElementById("resultLevel_" + this.level)){
             this.addResultLevel()
-        } else {
-            document.getElementById("resultLevel_" + this.level).textContent = this.level + " - " + nbEssai + " - " + this.timer
-        }
+        } 
 
         // Grille
         this.nbCol = this.levelBP[0].length
         this.nbLig = this.levelBP.length
-        this.sizeCase = this.width / 18
+        this.sizeCase = this.width / 19
         this.grilleLarg = this.nbCol * this.sizeCase
         this.grilleHaut = this.nbLig * this.sizeCase
         
@@ -374,7 +372,9 @@ class ClsGame {
         
         if(i == this.NbP) { // Si tous les Elements sont sur les Placements
             this.timer = document.getElementById("timer").textContent
-            document.getElementById("resultLevel_" + this.level).textContent = this.level + " - " + nbEssai + " - " + this.timer
+            let txtessai = " essai"
+            if (nbEssai > 1) txtessai = txtessai + "s"
+            document.getElementById("resultLevel_" + this.level).textContent = this.level + " - " + nbEssai + txtessai + " - " + this.timer
             clrTimer(true)
             
             level++
@@ -409,12 +409,24 @@ class ClsGame {
     }
 
     addResultLevel(){
-        const resultLevel = document.getElementById("resultLevel")
         const parafLevelHtml = document.createElement('p')
         parafLevelHtml.id = "resultLevel_" + this.level
-        parafLevelHtml.textContent = this.level + " - " + nbEssai + " - " + this.timer
-        resultLevel.append(parafLevelHtml)
+        let txtessai = " essai"
+        if (nbEssai > 1) txtessai = txtessai + "s"
+        parafLevelHtml.textContent = this.level + " - " + nbEssai + txtessai + " - " + this.timer
+        appendLog(parafLevelHtml)
     }
 }
 
 /*------------------------------------------------------------------------------------------*/
+
+function appendLog(parafLevelHtml) {
+    const resultLevel = document.getElementById("resultLevel")
+    
+    var doScroll = resultLevel.scrollTop > resultLevel.scrollHeight - resultLevel.clientHeight - 1
+    resultLevel.append(parafLevelHtml)
+
+    if (doScroll) {
+        resultLevel.scrollTop = resultLevel.scrollHeight - resultLevel.clientHeight
+    }
+}
