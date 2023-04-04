@@ -379,11 +379,13 @@ class ClsGame {
             
             level++
             if(!demo){
-                this.life++
-                document.getElementById('nbLife').textContent = this.life
-                document.getElementById('gamespace').textContent = "Bravo !"
-                pause = true
-                nbEssai = 1
+                setTimeout(()=>{
+                    document.getElementById('gamespace').textContent = "Bravo !"
+                    this.life++
+                    document.getElementById('nbLife').textContent = this.life
+                    pause = true
+                    nbEssai = 1
+                }, 500)
 
                 setTimeout(()=>{
                     spaceGame.initPart(level)
