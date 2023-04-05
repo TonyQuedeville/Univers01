@@ -186,8 +186,14 @@ function jouer(){
 
     // Restart level
     document.getElementById('cmdRestart').addEventListener('click', () => {
-        spaceGame.initPart(level)
         nbEssai++
+        spaceGame.initPart(level)
+        spaceGame.life--
+        document.getElementById('nbLife').textContent = spaceGame.life
+
+        if(spaceGame.life <= 0){ // fin de partie quand nb de vie = 0
+            displayFinPartie()
+        }
     })
 
     // Nouvelle Partie
