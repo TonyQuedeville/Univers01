@@ -34,7 +34,7 @@ let nbEssai = 1
 const a = () =>{
     console.log("orientationchange !")
     if (window.orientation === 0 || window.orientation === 180) {
-        //location.reload()
+        location.reload()
     } else {
         location.reload()
     }

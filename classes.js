@@ -38,14 +38,8 @@ class ClsGame {
         //this.Fspeed = 1 // Vitesse de déplacement E et P
 
         //--------------- Objets HTML ----------------------------
-        
-        // Espace de jeux
         this.gamespaceHTML = document.getElementById("gamespace")
-        this.width = this.gamespaceHTML.getBoundingClientRect().width - 1 // recupere la largeur de la div
-        this.height = this.gamespaceHTML.getBoundingClientRect().height - 1 // recupere la hauteur de la div
-        this.offsetx = this.gamespaceHTML.getBoundingClientRect().x + 1 // recupere la position X de la div
-        this.offsety = this.gamespaceHTML.getBoundingClientRect().y + 1 // recupere la position Y de la div
-        this.decalRefGrille = 26
+        
     }
 
     /* Initialisation d'une partie: redefini les parametres par défault des objets.
@@ -69,10 +63,22 @@ class ClsGame {
             this.addResultLevel()
         } 
 
+        // Espace de jeux
+        
+        const bound = this.gamespaceHTML.getBoundingClientRect()
+        this.width = bound.width - 1 // recupere la largeur de la div
+        this.height = bound.height - 1 // recupere la hauteur de la div
+        this.offsetx = bound.x + 1 // recupere la position X de la div
+        this.offsety = bound.y + 1 // recupere la position Y de la div
+        this.decalRefGrille = 26
+
         // Grille
         this.nbCol = this.levelBP[0].length
         this.nbLig = this.levelBP.length
-        this.sizeCase = this.width / 20// 19
+        //this.sizeCase = this.width / 20// 19
+        console.log(this.nbCol);
+        console.log(this.nbLig );
+        this.sizeCase = (this.height / (this.nbLig+1)) // 19
         this.grilleLarg = this.nbCol * this.sizeCase
         this.grilleHaut = this.nbLig * this.sizeCase
         
