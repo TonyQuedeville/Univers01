@@ -33,7 +33,7 @@ let nbEssai = 1
 // Ecoutes
 const a = () =>{
     console.log("resize !")
-    location.reload()
+    //location.reload()
 }
 window.addEventListener('resize', a)
 
