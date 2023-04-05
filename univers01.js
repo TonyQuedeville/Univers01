@@ -32,10 +32,14 @@ let nbEssai = 1
 
 // Ecoutes
 const a = () =>{
-    console.log("resize !")
-    //location.reload()
+    console.log("orientationchange !")
+    if (window.orientation === 0 || window.orientation === 180) {
+        //location.reload()
+    } else {
+        location.reload()
+    }
 }
-window.addEventListener('resize', a)
+window.addEventListener('orientationchange', a)
 
 // Commencer à jouer
 document.getElementById('start').addEventListener('click', () => {
