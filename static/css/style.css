@@ -154,6 +154,12 @@ main {
   align-items: center;
 }
 
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .icn {
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
 }
@@ -615,7 +621,7 @@ input[type=number] {
 
 #resultLevel {
   width: 99%;
-  height: 59vh;
+  height: 60vh;
   overflow: auto;
   background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
@@ -637,45 +643,15 @@ input[type=number] {
   scale: 1.1;
 }
 
-#cmdRestart {
-  display: flex;
-  justify-content: center;
-  align-item: center;
-  font-size: 1.2rem;
-  color: rgb(255, 255, 255);
-  margin: 5px;
-  padding: 5px 10px;
-  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
-  box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 0.5rem;
-  transition: 100ms;
-}
-#cmdRestart:hover {
-  scale: 1.1;
-}
-@media screen and (max-width: 1280px) {
-  #cmdRestart {
-    scale: 1.2;
-    margin-right: 20px;
-  }
-  #cmdRestart:hover {
-    scale: 1.3;
-  }
-}
-
 #cmdHaut, #cmdBas {
   rotate: 270deg;
   margin: 10px;
 }
 
-#cmdDemo {
-  display: flex;
-  justify-content: center;
-  align-item: center;
+#cmdDemo, #cmdRestart {
   font-size: 1.2rem;
   color: rgb(255, 255, 255);
-  margin: 25px;
+  margin: 25px 20px 0 5px;
   padding: 5px 10px;
   background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);
@@ -683,12 +659,15 @@ input[type=number] {
   border-radius: 0.5rem;
   transition: 100ms;
 }
-#cmdDemo:hover {
+#cmdDemo:hover, #cmdRestart:hover {
   scale: 1.1;
 }
 @media screen and (max-width: 1280px) {
-  #cmdDemo {
-    display: none;
+  #cmdDemo, #cmdRestart {
+    scale: 1.2;
+  }
+  #cmdDemo:hover, #cmdRestart:hover {
+    scale: 1.3;
   }
 }
 
