@@ -354,15 +354,13 @@ input[type=number] {
 }
 @media screen and (orientation: portrait) {
   #gamespace {
-    width: 99%;
+    width: 99vw;
+    height: 25vh;
     padding-top: 100px;
     padding-bottom: 100px;
   }
   #gamespace #portrait-warning {
     display: flex;
-  }
-  #gamespace #commencer {
-    display: none;
   }
 }
 
@@ -381,7 +379,6 @@ input[type=number] {
   box-shadow: 0px 0px 5px 1px #76e6e6;
   border-radius: 0.5rem;
   background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
-  margin-left: 40px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -537,7 +534,12 @@ input[type=number] {
 }
 @media screen and (orientation: portrait) {
   #board {
-    display: none;
+    width: 99vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -555,7 +557,6 @@ input[type=number] {
 @media screen and (orientation: portrait) {
   #infoBoard {
     width: 45%;
-    min-height: 90%;
   }
 }
 
@@ -573,8 +574,23 @@ input[type=number] {
 @media screen and (orientation: portrait) {
   #cmdBox {
     width: 25%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    transform: scale(3);
+    margin-top: 25%;
+    margin-bottom: 15%;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #cmdRD {
+    width: 40%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     transform: scale(2);
-    margin-right: 20px;
+    margin-bottom: 15%;
   }
 }
 
@@ -589,6 +605,14 @@ input[type=number] {
     left: 120px;
   }
 }
+@media screen and (orientation: portrait) {
+  #nbLife {
+    transform: scale(0.5);
+    top: 90px;
+    left: 116px;
+  }
+}
+
 #scoreboard {
   width: 22vw;
   margin: 5px 5px;
@@ -622,7 +646,7 @@ input[type=number] {
 
 #resultLevel {
   width: 99%;
-  height: 60vh;
+  height: 25vh;
   overflow: auto;
   background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
   box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.5);

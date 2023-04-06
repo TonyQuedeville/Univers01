@@ -12,9 +12,9 @@
     <main>
         <img id="galaxy01" src="./static/img/Galaxy01.png">
         <div id="gamespace" class="gamespace">   
-            <div id="narration" class="vertical center">
+            <div class="vertical center">
                 <h1>Univers 01</h1>
-                <div >
+                <div id="narration">
                     <p>A bord de votre vaisseau, votre mission est de ramenner les planètes perdues dans une des galaxies de l'univers 01.</p>
                     <p>Trouver les solutions de chaque niveau en moins d'essai possible.</p>
                     <p>Visualiser la solution vous en coutera 3 essais et une vie.</p>
@@ -25,15 +25,14 @@
                     <p>"N" (Nouvelle partie) : pour Relancer une Nouvelle partie</p>
                     <p>"R" (Restart) : pour Refraire un autre essai</p>
                     <p>"S" (Solution) : pour visualiser la solution. Une solution visualisée compte pour 3 essais et une vie en moins</p>
+                    <p>"Enter" : Commencer à jouer</p>
                 </div>
 
-                <div id="commencer" class="vertical center">
+                <div id="commencer" class="horizontal center">
+                    <p>Start : </p>
                     <img id="start" src="./static/icn/icn-play.png" alt="Commencer à jouer">
-                    <p>"Enter" Commencer :</p>
                 </div>
-                <div id="portrait-warning" class="center">
-                    Veuillez basculer votre appareil en mode paysage pour jouer
-                </div>
+                
             </div>
         </div>
 
@@ -63,7 +62,7 @@
                     <img id="cmdBas" class="cmd" src="./static/icn/icn-retour.png">
                 </div>
             </div>
-            <div class="horizontal between">
+            <div id="cmdRD" class="horizontal between">
                 <div id="cmdRestart">Retour</div>
                 <div id="cmdDemo">Demo</div>
             </div>

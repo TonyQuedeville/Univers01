@@ -35,7 +35,6 @@ class ClsGame {
         this.FLig = 0
         this.FCol = 0
         this.NbP = 0
-        //this.Fspeed = 1 // Vitesse de déplacement E et P
 
         //--------------- Objets HTML ----------------------------
         this.gamespaceHTML = document.getElementById("gamespace")

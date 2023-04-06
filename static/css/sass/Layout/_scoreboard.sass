@@ -16,7 +16,13 @@
             height: auto
 
     +portrait
-        display: none
+        width: 99vw
+        height: 70vh
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    
 
 #infoBoard
     +paysage
@@ -29,7 +35,7 @@
 
     +portrait
         width: 45%
-        min-height: 90%
+        //min-height: 90%
 
 #cmdBox
     touch-action: manipulation
@@ -44,8 +50,17 @@
 
     +portrait
         width: 25%
+        height: fit-content
+        transform: scale(3)
+        margin-top: 25%
+        margin-bottom: 15%
+
+#cmdRD
+    +portrait
+        width: 40%
+        height: fit-content
         transform: scale(2)
-        margin-right: 20px
+        margin-bottom: 15%
 
 #nbLife
     position: absolute
@@ -55,6 +70,11 @@
         +paysage
         top: 97px
         left: 120px
+    
+    +portrait
+        transform: scale(0.5)
+        top: 90px
+        left: 116px
 
 #scoreboard
     width: 22vw
@@ -85,7 +105,7 @@
 
 #resultLevel
     width: 99%
-    height: 60vh
+    height: 25vh
     overflow: auto
     background: $fondContainerTrans
     box-shadow: $shadow
