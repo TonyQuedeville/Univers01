@@ -7,6 +7,7 @@
 #board
     margin: 5px 5px 
     height: 93vh
+    width: 15vw
     touch-action: manipulation
 
     +xl
@@ -43,6 +44,7 @@
 
     +xl
         +paysage
+            margin-left: 10px
             max-width: 90%
             transform: scale(1.2)
 
@@ -81,18 +83,6 @@
     align-items: center
     flex-direction: column
 
-.score-player
-    width: 21vw
-    height: 100%
-    margin: 2px 5px
-    background: $fondScoreBoard
-    box-shadow: $shadow
-    border: $borderWhite
-    border-radius: $radius
-    display: flex
-    flex-direction: row
-    transform: scale(.95)
-
 .result
     width: 100%
 
@@ -115,6 +105,8 @@
         @include paysage
             //display: none
             height: 4em
+
+    
 
 .cmd
     transition: 100ms
