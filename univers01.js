@@ -236,7 +236,7 @@ function jouer(){
     document.getElementById('playSeq').addEventListener('click', () => {
         spaceGame.initPart(level) 
         playSequence(level) 
-        nbEssai+=3 // 3 essai supplémentaire
+        nbEssai+=3 // 3 essais supplémentaire
         spaceGame.life-- // 1 vies en moins
         document.getElementById('nbLife').textContent = spaceGame.life
         seq = []
@@ -295,6 +295,8 @@ function playSequence(level, demo=false){
                     if(level <= levelMax){
                         level++
                         playSequence(level, true)
+                    } else {
+                        location.reload()
                     }
                 } else {
                     spaceGame.initPart(level) 
