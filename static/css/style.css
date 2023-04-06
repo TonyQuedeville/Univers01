@@ -24,6 +24,7 @@
 html, body {
   width: 100%;
   margin: 0px;
+  background: linear-gradient(0deg, rgba(13, 40, 44, 0.5) 0%, rgba(3, 21, 22, 0.5) 100%);
   background: url("../img/spaceship.jpg");
   background-size: cover;
   overflow: hidden;
@@ -50,6 +51,22 @@ html, body {
   opacity: 0.8;
   -webkit-animation: galaxy-rotate 200s linear infinite;
           animation: galaxy-rotate 200s linear infinite;
+}
+
+#loadingpage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 999;
+}
+
+#loadingLogo {
+  margin: 20px;
+  -webkit-animation: planete-rotate 2s linear infinite;
+          animation: planete-rotate 2s linear infinite;
 }
 
 h1, h2, h3, h4, h5, h6, label, p, a {

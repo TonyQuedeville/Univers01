@@ -8,6 +8,7 @@ html, body
     width: 100%
     //height: 100vh
     margin: 0px
+    background: $fondContainerTrans
     background: url('../img/spaceship.jpg') //$fondContainerTrans
     background-size: cover
     overflow: hidden
@@ -29,6 +30,19 @@ html, body
     height: 75%
     opacity: 0.8
     animation: galaxy-rotate 200s linear infinite
+
+#loadingpage
+    position: absolute
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    background: black
+    z-index: 999
+
+#loadingLogo
+    margin: 20px
+    animation: planete-rotate 2s linear infinite
 
 h1, h2, h3, h4, h5, h6, label, p, a  
     font-family: Bookman Old Style
