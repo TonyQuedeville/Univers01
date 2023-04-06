@@ -46,9 +46,10 @@ class ClsGame {
         en fonction du niveau de difficulté: Level.
     */
     initPart(level){
+        console.log(level);
         pause = false
         this.level = level
-        document.getElementById("narration").style.display = "none"
+        this.gamespaceHTML.textContent = ""
         this.levelBP = this.levelsBP[this.level-1] // Niveau actuel Grille Brique / Placement
         this.levelEF = this.levelsEFInit[this.level-1] // Niveau actuel Grille Element / Fleche
         this.NbP = 0
@@ -398,7 +399,11 @@ class ClsGame {
                     spaceGame.initPart(level)
                 }, 1500)
             } else {
-                spaceGame.initPart(level)
+                if(level >= levelMax) {
+                    location.reload()
+                } else {
+                    spaceGame.initPart(level)
+                }
             }
 
             if(level > this.nbLevel){
