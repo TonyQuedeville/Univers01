@@ -33,6 +33,11 @@ html, body {
     overflow: auto;
   }
 }
+@media screen and (orientation: portrait) {
+  html, body {
+    overflow: auto;
+  }
+}
 
 #galaxy01 {
   position: absolute;
@@ -344,9 +349,6 @@ input[type=number] {
   height: 93vh;
   touch-action: manipulation;
 }
-#gamespace #portrait-warning {
-  display: none;
-}
 @media screen and (max-width: 1280px) and (orientation: landscape) {
   #gamespace {
     height: auto;
@@ -362,11 +364,6 @@ input[type=number] {
   #gamespace #portrait-warning {
     display: flex;
   }
-}
-
-#portrait-warning {
-  margin: 20px;
-  text-align: center;
 }
 
 #grille {
