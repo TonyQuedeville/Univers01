@@ -241,84 +241,84 @@ function jouer(){
         document.getElementById('nbLife').textContent = spaceGame.life
         seq = []
     })
+}
 
-    // Play demo
-    let playDemo = false
-    document.getElementById('cmdDemo').addEventListener('click', () => {
-        if(!playDemo){
-            playDemo = true
-            level = 1
-            spaceGame.initPart(level) 
-            playSequence(level, true) 
-            seq = []
-        } else {
-            location.reload()
-        }
-    })
-    //*/
+// Sequences
+function playSequence(level, demo=false){
+    spaceGame.TestEP()
+    if(level <= levelMax){
+        const seq = seqSolutions[level-1]
+        let iSeq = 0
+        let direction = seq[iSeq]
+        let intervalTime = 0
 
-    // Sequences
-    function playSequence(level, demo=false){
-        spaceGame.TestEP()
-        if(level <= levelMax){
-            const seq = seqSolutions[level-1]
-            let iSeq = 0
-            let direction = seq[iSeq]
-            let intervalTime = 0
+        function playLoop(){
+            if(intervalTime == 5){
+                direction = seq[iSeq]
 
-            function playLoop(){
-                if(intervalTime == 5){
-                    direction = seq[iSeq]
-
-                    switch (direction){
-                        case "G" :
-                            moving_left = true
-                            break;
+                switch (direction){
+                    case "G" :
+                        moving_left = true
+                        break;
+                        
+                    case "D" :
+                        moving_right = true
+                        break;
                             
-                        case "D" :
-                            moving_right = true
-                            break;
-                                
-                        case "H" :
-                            moving_up = true
-                            break;
+                    case "H" :
+                        moving_up = true
+                        break;
 
-                        case "B" :
-                            moving_down = true
-                            break;
-                            
-                        } 
+                    case "B" :
+                        moving_down = true
+                        break;
+                        
+                    } 
 
-                    spaceGame.moveFleche(moving_left, moving_right, moving_up, moving_down) 
-                    moving_left = false
-                    moving_right = false
-                    moving_up = false
-                    moving_down = false
+                spaceGame.moveFleche(moving_left, moving_right, moving_up, moving_down) 
+                moving_left = false
+                moving_right = false
+                moving_up = false
+                moving_down = false
 
-                    iSeq++
-                    intervalTime = 0
-                } else {
-                    intervalTime++
-                }
-                
-                if(iSeq <= seq.length){
-                    requestAnimationFrame(playLoop)
-                } else {
-                    if(demo){
-                        spaceGame.TestEP(true)
-                        if(level <= levelMax){
-                            level++
-                            playSequence(level, true)
-                        }
-                    } else {
-                        spaceGame.initPart(level) 
+                iSeq++
+                intervalTime = 0
+            } else {
+                intervalTime++
+            }
+            
+            if(iSeq <= seq.length){
+                requestAnimationFrame(playLoop)
+            } else {
+                if(demo){
+                    spaceGame.TestEP(true)
+                    if(level <= levelMax){
+                        level++
+                        playSequence(level, true)
                     }
+                } else {
+                    spaceGame.initPart(level) 
                 }
             }
-            playLoop()
         }
+        playLoop()
     }
 }
+
+// Play demo
+let playDemo = false
+document.getElementById('cmdDemo').addEventListener('click', () => {
+    if(!playDemo){
+        playDemo = true
+        level = 1
+        spaceGame.initPart(level) 
+        playSequence(level, true) 
+        seq = []
+    } else {
+        location.reload()
+    }
+})
+//*/
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
