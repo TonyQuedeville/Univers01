@@ -48,7 +48,7 @@ class ClsGame {
     initPart(level){
         pause = false
         this.level = level
-        this.gamespaceHTML.textContent = this.level
+        //this.gamespaceHTML.textContent = this.level
         this.levelBP = this.levelsBP[this.level-1] // Niveau actuel Grille Brique / Placement
         this.levelEF = this.levelsEFInit[this.level-1] // Niveau actuel Grille Element / Fleche
         this.NbP = 0
@@ -63,8 +63,7 @@ class ClsGame {
             this.addResultLevel()
         } 
 
-        // Espace de jeux
-        
+        // Espace de jeux        
         const bound = this.gamespaceHTML.getBoundingClientRect()
         this.width = bound.width - 1 // recupere la largeur de la div
         this.height = bound.height - 1 // recupere la hauteur de la div
@@ -75,9 +74,6 @@ class ClsGame {
         // Grille
         this.nbCol = this.levelBP[0].length
         this.nbLig = this.levelBP.length
-        //this.sizeCase = this.width / 20// 19
-        console.log(this.nbCol);
-        console.log(this.nbLig );
         this.sizeCase = (this.height / (this.nbLig+1)) // 19
         this.grilleLarg = this.nbCol * this.sizeCase
         this.grilleHaut = this.nbLig * this.sizeCase
@@ -172,6 +168,11 @@ class ClsGame {
             }
         }
 
+        // Ajout du numero de level
+        this.numLevelHTML = document.createElement('p')
+        this.numLevelHTML.id = "numLevel"
+        this.numLevelHTML.textContent = "Level: " + this.level
+        this.grilleHTML.append(this.numLevelHTML)
         // Ajout du timer
         this.timerHTML = document.createElement('p')
         this.timerHTML.id = "timer"

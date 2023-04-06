@@ -292,7 +292,7 @@ function playSequence(level, demo=false){
             } else {
                 if(demo){
                     spaceGame.TestEP(true)
-                    if(level <= levelMax){
+                    if(level < levelMax){
                         level++
                         playSequence(level, true)
                     } else {

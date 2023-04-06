@@ -140,6 +140,7 @@ main {
 @media screen and (orientation: portrait) {
   main {
     flex-direction: column;
+    height: 97vh;
   }
 }
 
@@ -409,14 +410,14 @@ input[type=number] {
   align-items: center;
 }
 
-#timer {
-  translate: 0 -7px;
+#timer, #numLevel {
+  translate: 0 -5px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   font-size: 1rem;
   color: rgb(99, 185, 196);
-  padding: 0px 5px;
+  padding: 1px 10px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.829) 50%, rgba(43, 42, 42, 0.308) 100%);
   border-radius: 10px;
   box-shadow: 0px 0px 5px 1px #76e6e6;
