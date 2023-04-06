@@ -293,9 +293,11 @@ function playSequence(level, demo=false){
                 if(demo){
                     spaceGame.TestEP(true)
                     if(level < levelMax){
+                        console.log(level);
                         level++
                         playSequence(level, true)
                     } else {
+                        console.log("fin demo !");
                         location.reload()
                     }
                 } else {

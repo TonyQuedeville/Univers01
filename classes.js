@@ -48,7 +48,7 @@ class ClsGame {
     initPart(level){
         pause = false
         this.level = level
-        //this.gamespaceHTML.textContent = this.level
+        document.getElementById("narration").style.display = "none"
         this.levelBP = this.levelsBP[this.level-1] // Niveau actuel Grille Brique / Placement
         this.levelEF = this.levelsEFInit[this.level-1] // Niveau actuel Grille Element / Fleche
         this.NbP = 0
