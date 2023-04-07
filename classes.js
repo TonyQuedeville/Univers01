@@ -367,6 +367,7 @@ class ClsGame {
 
     // Test si E = P
     TestEP(demo = false){
+        console.log(level);
         let i = 0
         for(let lig=0; lig<this.nbLig; lig++){
             for(let col=0; col<this.nbCol; col++){

@@ -245,7 +245,6 @@ function jouer(){
 
 // Sequences
 function playSequence(level, demo=false){
-    spaceGame.TestEP()
     if(level <= levelMax){
         const seq = seqSolutions[level-1]
         let iSeq = 0
