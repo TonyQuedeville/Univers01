@@ -385,20 +385,20 @@ class ClsGame {
             document.getElementById("resultLevel_" + this.level).textContent = this.level + " - " + nbEssai + txtessai + " - " + this.timer
             clrTimer(true)
             
-            level++
             if(!demo){
+                document.getElementById('gamespace').textContent = "Bravo !"
+                this.life++
+                document.getElementById('nbLife').textContent = this.life
+                pause = true
+                nbEssai = 1
+                
                 setTimeout(()=>{
-                    document.getElementById('gamespace').textContent = "Bravo !"
-                    this.life++
-                    document.getElementById('nbLife').textContent = this.life
-                    pause = true
-                    nbEssai = 1
-                }, 500)
-
-                setTimeout(()=>{
+                    level++
+                    console.log("initPart !");
                     spaceGame.initPart(level)
-                }, 1500)
+                }, 1000)
             } else {
+                level++
                 if(level >= levelMax) {
                     location.reload()
                 } else {
@@ -408,8 +408,6 @@ class ClsGame {
 
             if(level > this.nbLevel){
                 displayFinPartie(false)
-            } else {
-                //level++
             }
         }
     }

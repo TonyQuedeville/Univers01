@@ -24,7 +24,7 @@ let moving_down = false
 let pause = false
 let demo = false
 let seq = []
-let level = 1
+let level = 0
 let Life = 5
 let nbEssai = 1
 
@@ -58,7 +58,6 @@ document.addEventListener('keydown', (e) => {
 
 function jouer(){
     spaceGame.initPart(level)
-    spaceGame.TestEP()
 
     document.getElementById("cmdGauche").addEventListener('click', () => {
         moving_left = true
@@ -167,14 +166,12 @@ function jouer(){
                     level++
                     if(level > levelMax){level = 1}
                     spaceGame.initPart(level) 
-                    spaceGame.TestEP()
                     break
 
                 case "PageDown":
                     level--
                     if(level < 1){level = levelMax}
                     spaceGame.initPart(level) 
-                    spaceGame.TestEP()
                     break
 
                 default:
