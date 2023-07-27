@@ -7,7 +7,7 @@ Jeu de logique inspiré de Sokoban
 Tony Quedeville : tquedevi
 Zone01:
 
-20/02/2023"
+20/02/2023
 
 
 # Utilisation
