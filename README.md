@@ -5,7 +5,6 @@ Jeu de logique inspiré de Sokoban
 # Developpeur
 
 Tony Quedeville : tquedevi
-Zone01:
 
 20/02/2023
 
